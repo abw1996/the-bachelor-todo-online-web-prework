@@ -8,6 +8,7 @@ def get_first_name_of_season_winner(data, season)
         individual_data.each do |data_type, value|
           if data_type == "name"
             nameholder = value
+            binding.pry
             if data_type == "status"
               if value == "Winner"
                 namae = nameholder
