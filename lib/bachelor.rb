@@ -60,7 +60,23 @@ def count_contestants_by_hometown(data, hometown)
 end
 #=================================================
 def get_occupation(data, hometown)
-  # code here
+  occ = " "
+  data.each do |seasonal, arri|
+    arri.each do |individual_data|
+      individual_data.each do |data_type, value|
+        if data_type == "hometown"
+          if value == hometown
+            individual_data.each do |data_type1, value1|
+              if data_type1 == "occupation"
+                occ = value1
+              end 
+            end 
+          end 
+        end 
+      end
+    end 
+  end
+  occ
 end
 #=================================================
 def get_average_age_for_season(data, season)
