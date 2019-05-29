@@ -83,16 +83,18 @@ end
 #=================================================
 def get_average_age_for_season(data, season)
   counter = 0
+  contestant_counter = 0
   data.each do |seasonal, arri|
     if season == seasonal
       arri.each do |individual_data|
         individual_data.each do |data_type, value|
           if data_type == "age"
             counter += value.to_i
+            contestant_counter += 1
           end
         end
       end 
     end
   end 
-  counter
+  counter / contestant_counter
 end
