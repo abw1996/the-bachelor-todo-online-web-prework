@@ -48,9 +48,7 @@ def count_contestants_by_hometown(data, hometown)
   data.each do |seasonal, arri|
     arri.each do |individual_data|
       individual_data.each do |data_type, value|
-        if data_type == "name"
-          nameholder = value
-        end
+        
         if data_type == "hometown"
           if value == hometown
             counter += 1
