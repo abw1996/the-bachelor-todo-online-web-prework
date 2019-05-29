@@ -24,7 +24,23 @@ def get_first_name_of_season_winner(data, season)
 end
 #=================================================
 def get_contestant_name(data, occupation)
-  
+  namae = " "
+  nameholder = " "
+  data.each do |seasonal, arri|
+    arri.each do |individual_data|
+      individual_data.each do |data_type, value|
+        if data_type == "name"
+          nameholder = value
+        end
+        if data_type == "occupation"
+          if value == occupation
+            namae = nameholder
+          end 
+        end 
+      end
+    end 
+  end
+end
 end
 #=================================================
 def count_contestants_by_hometown(data, hometown)
