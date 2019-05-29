@@ -68,7 +68,7 @@ def get_occupation(data, hometown)
           if value == hometown
             individual_data.each do |data_type1, value1|
               if data_type1 == "occupation"
-                if occ = " "
+                if occ == " "
                   occ = value1
                 end
               end 
