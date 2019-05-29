@@ -44,23 +44,22 @@ def get_contestant_name(data, occupation)
 end
 #=================================================
 def count_contestants_by_hometown(data, hometown)
-  namae = " "
-  nameholder = " "
+  counter = 0
   data.each do |seasonal, arri|
     arri.each do |individual_data|
       individual_data.each do |data_type, value|
         if data_type == "name"
           nameholder = value
         end
-        if data_type == "occupation"
-          if value == occupation
-            namae = nameholder
+        if data_type == "hometown"
+          if value == hometown
+            counter += 1
           end 
         end 
       end
     end 
   end
-  namae
+  counter
 end
 #=================================================
 def get_occupation(data, hometown)
