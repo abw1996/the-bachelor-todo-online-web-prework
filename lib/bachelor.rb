@@ -10,7 +10,6 @@ def get_first_name_of_season_winner(data, season)
             nameholder = value
           end
           if data_type == "status"
-            binding.pry
             if value == "Winner"
               namae = nameholder
             end 
